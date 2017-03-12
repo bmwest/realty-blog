@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'faker'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -25,6 +26,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+  gem 'coveralls', require: false
 end
 
 group :development do
