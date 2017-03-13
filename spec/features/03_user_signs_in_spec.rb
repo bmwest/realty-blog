@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user signs in' do
+feature "user signs in" do
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario "an existing user specifies a valid email and password" do
