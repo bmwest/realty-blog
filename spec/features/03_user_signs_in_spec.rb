@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'user signs in' do
-  let!(:user) { FactoryGirl.create(:user, role: 'member') }
+  let!(:user) { FactoryGirl.create(:user) }
 
   scenario "an existing user specifies a valid email and password" do
     sign_in(user)
@@ -33,12 +33,15 @@ feature 'user signs in' do
     expect(page).to_not have_content("Hey, nice to see you again.")
   end
 
-  scenario "an already authenticated user cannot re-sign up" do
+  scenario "an already authenticated user cannot re-sign in" do
     sign_in(user)
     visit new_user_session_path
 
     expect(page).to have_content("Sign Out")
     expect(page).to have_content("You are already signed in")
+
+    visit new_user_session_path
+
     expect(page).to_not have_content("Sign In")
   end
 end
