@@ -11,7 +11,7 @@ feature "admin deletes an article" do
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
-    click_link "#{article.title}"
+    visit article_path(article)
 
     expect(page).to have_content("Delete #{article.title}")
 
