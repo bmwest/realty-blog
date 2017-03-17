@@ -4,7 +4,7 @@ feature "admin deletes an article" do
   let!(:user) { FactoryGirl.create(:user, role: "admin") }
   let!(:article) { FactoryGirl.create(:article) }
 
-  scenario "admin deletes an article" do
+  xit "admin deletes an article" do
     sign_in(user)
 
     expect(page).to have_content("Hey, nice to see you again.")

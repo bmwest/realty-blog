@@ -4,7 +4,7 @@ feature "user sees articles" do
   let!(:user) { FactoryGirl.create(:user, role: "member") }
   let!(:article) { FactoryGirl.create(:article) }
 
-  scenario "a registered user can see all articles" do
+  xit "a registered user can see all articles" do
     sign_in(user)
 
     expect(page).to have_content("Hey, nice to see you again.")
@@ -19,7 +19,7 @@ feature "user sees articles" do
     expect(page).to have_content("Sign Out")
   end
 
-  scenario "an unregistered user can see all articles" do
+  xit "an unregistered user can see all articles" do
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
@@ -28,7 +28,7 @@ feature "user sees articles" do
     expect(page).to have_content("Sign Out")
   end
 
-  scenario "a user cannot edit articles" do
+  xit "a user cannot edit articles" do
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
@@ -38,7 +38,7 @@ feature "user sees articles" do
     expect(page).to have_content("Sign Out")
   end
 
-  scenario "a user cannot delete articles" do
+  xit "a user cannot delete articles" do
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
@@ -48,7 +48,7 @@ feature "user sees articles" do
     expect(page).to have_content("Sign Out")
   end
 
-  scenario "a user cannot delete articles" do
+  xit "a user cannot delete articles" do
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
