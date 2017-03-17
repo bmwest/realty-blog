@@ -15,7 +15,7 @@ feature "user sees articles" do
 
     click_button "Delete #{article.title}"
 
-    expect(page).to_not have_content("#{article.title}")
+    expect(page).to_not have_content(article.title)
     expect(page).to have_content("Sign Out")
   end
 
@@ -24,7 +24,7 @@ feature "user sees articles" do
 
     click_link "View All Articles"
 
-    expect(page).to have_content("#{article.title}")
+    expect(page).to have_content(article.title)
     expect(page).to have_content("Sign Out")
   end
 
@@ -33,7 +33,7 @@ feature "user sees articles" do
 
     click_link "View All Articles"
 
-    expect(page).to have_content("#{article.title}")
+    expect(page).to have_content(article.title)
     expect(page).to_not have_content("Edit #{article.title}")
     expect(page).to have_content("Sign Out")
   end
@@ -43,7 +43,7 @@ feature "user sees articles" do
 
     click_link "View All Articles"
 
-    expect(page).to have_content("#{article.title}")
+    expect(page).to have_content(article.title)
     expect(page).to_not have_content("Delete #{article.title}")
     expect(page).to have_content("Sign Out")
   end
@@ -53,7 +53,7 @@ feature "user sees articles" do
 
     click_link "View All Articles"
 
-    expect(page).to have_content("#{article.title}")
+    expect(page).to have_content(article.title)
     expect(page).to_not have_content("Edit #{article.title}")
     expect(page).to have_content("Sign Out")
   end

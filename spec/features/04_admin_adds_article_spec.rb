@@ -26,7 +26,7 @@ feature "admin adds an article" do
     expect(page).to have_content("Hey, nice to see you again.")
     expect(page).to have_content("View All Articles")
 
-    click_link "#{article.title}"
+    visit article_path(article)
     expect(page).to have_content("Edit #{article.title}")
 
     click_button "Post"

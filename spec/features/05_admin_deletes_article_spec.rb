@@ -17,7 +17,7 @@ feature "admin deletes an article" do
 
     click_button "Delete #{article.title}"
 
-    expect(page).to_not have_content("#{article.title}")
+    expect(page).to_not have_content(article.title)
     expect(page).to have_content("The article has been deleted")
     expect(page).to have_content("Sign Out")
   end
