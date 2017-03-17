@@ -1,7 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-feature 'user sees welcome message on the homepage' do
-  let!(:article) { FactoryGirl.create(:article) }
+feature "user sees welcome message on the homepage" do
 
   scenario "user sees welcome message on the homepage" do
     visit root_path
