@@ -10,7 +10,7 @@
 <br>
 
 <div class="article-permissions">
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <%= link_to "Edit #{@article.title}", edit_user_article_path(@article) %>
     <%= link_to "Delete #{@article.title}", user_article_path(@article), method: :delete %>
   <% end %>
