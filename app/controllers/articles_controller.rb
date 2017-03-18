@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
 
     if @article.update(article_params)
       redirect_to article_path(@article), notice: "Article was successfully " +
-      "updated!"
+        "updated!"
     else
       render :edit
     end
