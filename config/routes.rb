@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :articles
   end
 
-  resources :admin
   resources :articles
 
   root 'home#index'

@@ -19,7 +19,7 @@ feature "admin adds an article" do
     expect(page).to have_content("Sign Out")
   end
 
-  xit "admin edits an article" do
+  scenario "admin edits an article" do
     sign_in(user)
 
     expect(page).to have_content("Hey, nice to see you again.")
@@ -36,7 +36,7 @@ feature "admin adds an article" do
 
     click_button "Post"
 
-    expect(page).to have_content("Your new article has updated!")
+    expect(page).to have_content("Article was successfully updated!")
     expect(page).to have_content("Sign Out")
   end
 end

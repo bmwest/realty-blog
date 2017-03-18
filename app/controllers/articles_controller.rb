@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show]
 
   def index
     @articles = Article.all.order(created_at: :desc)
@@ -25,26 +25,30 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @user = current_user
     @article = Article.find(params[:id])
   end
 
   def update
-    @user = current_user
-    @article = Article.where(id: article_params[:id], user: current_user)
-    if @article.update(article_params(@article))
-      @article_params = article_params[:id]
-      redirect_to article_path(@article), notice: 'Article was successfully updated'
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to article_path(@article), notice: 'Article was successfully updated!'
+      # render :show
     else
       render :edit
     end
   end
 
   def show
-    if current_user.admin?
-      @article = Article.find(params[:id])
-    else
-      @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    if @article.destroy
+      redirect_to user_articles_path, notice: 'The article has been deleted'
     end
   end
 
@@ -52,12 +56,5 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :body)
-  end
-
-  def authorize_user
-    unless user_signed_in? || (current_user && current_user.admin?)
-      flash[:notice] = "Please log in to use this feature"
-      redirect_to new_user_session_path
-    end
   end
 end
