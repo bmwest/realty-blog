@@ -10,7 +10,4 @@ RSpec.describe Article, type: :model do
                                       267-555-5555 by no later than Wednesday,
                                       April 3, 2017. Hope to see you there!") }
   it { should_not have_valid(:body).when(nil, "") }
-
-  it { should have_valid(:author).when("Realor No. 1") }
-  it { should_not have_valid(:author).when(nil, "") }
 end

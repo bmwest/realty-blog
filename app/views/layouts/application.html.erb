@@ -11,6 +11,11 @@
   <body>
     <nav>
       <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to 'Post New Article', new_user_article_path(current_user) %>
+        <%= link_to 'View Your Articles', user_articles_path(current_user) %>
+      <% end %>
+        <%= link_to 'View All Articles', articles_path %>
         <%= link_to 'Sign Out', destroy_user_session_path %>
       <% else %>
         <%= link_to 'Sign In', new_user_session_path %>

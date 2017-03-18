@@ -32,6 +32,7 @@ feature "user comments on articles" do
 
     click_button "Comment"
 
+    expect(page).to have_content("Comment Posted!")
     expect(page).to_not have_content("can't be blank")
     expect(page).to have_content("Sign Out")
   end

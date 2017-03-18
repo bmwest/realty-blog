@@ -28,6 +28,16 @@ feature "user sees articles" do
     expect(page).to have_content("Sign Out")
   end
 
+  xit "a user cannot post articles" do
+    expect(page).to have_content("View All Articles")
+
+    click_link "View All Articles"
+
+    expect(page).to have_content(article.title)
+    expect(page).to_not have_content("Post New Article")
+    expect(page).to have_content("Sign Out")
+  end
+
   xit "a user cannot edit articles" do
     expect(page).to have_content("View All Articles")
 
@@ -45,16 +55,6 @@ feature "user sees articles" do
 
     expect(page).to have_content(article.title)
     expect(page).to_not have_content("Delete #{article.title}")
-    expect(page).to have_content("Sign Out")
-  end
-
-  xit "a user cannot delete articles" do
-    expect(page).to have_content("View All Articles")
-
-    click_link "View All Articles"
-
-    expect(page).to have_content(article.title)
-    expect(page).to_not have_content("Edit #{article.title}")
     expect(page).to have_content("Sign Out")
   end
 end
