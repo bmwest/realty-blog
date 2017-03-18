@@ -1,0 +1,9 @@
+<div class="article-index-header">
+  <h1>Article Feed</h1>
+</div>
+
+<div class="article-index">
+  <% @articles.each do |a| %>
+    <%= link_to a.title, article_path(a) %><br>
+  <% end %>
+</div>

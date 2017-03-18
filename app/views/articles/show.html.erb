@@ -1,0 +1,21 @@
+<div class="article-show-header">
+  <h1><%= @article.title %></h1>
+  <p>by | <em><%= @article.user.first_name %></em>
+</div>
+
+<div class="article-body">
+  <%= @article.body %>
+</div>
+
+<br>
+
+<div class="article-permissions">
+  <% if current_user.admin? %>
+    <%= link_to "Edit #{@article.title}", edit_user_article_path(@article) %>
+    <%= link_to "Delete #{@article.title}", user_article_path(@article), method: :delete %>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to "< back", articles_path %>
