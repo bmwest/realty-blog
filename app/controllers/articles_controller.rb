@@ -32,8 +32,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
-      redirect_to article_path(@article), notice: ```Article was successfully
-      updated!```
+      redirect_to article_path(@article), notice: "Article was successfully " +
+      "updated!"
     else
       render :edit
     end
