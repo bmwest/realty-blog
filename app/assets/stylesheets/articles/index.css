@@ -1,0 +1,28 @@
+#main {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.article-item {
+  display: flex;
+  margin: 12px;
+  float: left;
+  width: 45%;
+  height: 300px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #646464;
+  text-align: center;
+  color: black;
+  align-items: center;
+}
+
+li {
+  margin: 0 auto;
+}

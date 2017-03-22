@@ -10,6 +10,7 @@ class User < ApplicationRecord
   end
 
   has_many :articles, inverse_of: :user
+  has_many :comments
   accepts_nested_attributes_for :articles
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
