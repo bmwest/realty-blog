@@ -1,22 +1,29 @@
 require 'rails_helper'
 
 feature "admin removes a comment" do
-  let!(:user) { FactoryGirl.create(:user, role: "admin") }
-  let!(:article) { FactoryGirl.create(:article) }
+  let!(:user_A) { FactoryGirl.create(:user, role: "admin") }
+  let!(:user_M) { FactoryGirl.create(:user, role: "member") }
+  let!(:article) { FactoryGirl.create(:article, user: user_A) }
+  let!(:comment1) { FactoryGirl.create(:comment, article: article, commenter: "Guest") }
+  let!(:comment2) { FactoryGirl.create(:comment, article: article, user: user_M) }
 
-  xit "admin removes a comment" do
-    sign_in(user)
+  scenario "admin removes a comment" do
+    sign_in(user_A)
 
     expect(page).to have_content("Hey, nice to see you again.")
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
-    expect(page).to have_content("Delete #{article.title}")
 
-    click_button "Delete #{article.title}"
+    visit article_path(article)
 
-    expect(page).to_not have_content(article.title)
-    expect(page).to have_content("The article has been deleted")
+    expect(page).to have_content("Delete #{comment1.commenter}'s Comment")
+    expect(page).to have_content("Delete #{comment2.user.first_name}'s Comment")
+
+    click_link "Delete #{comment1.commenter}'s Comment"
+
+    expect(page).to_not have_content(comment1.body)
+    expect(page).to have_content("Comment was successfully Deleted.")
     expect(page).to have_content("Sign Out")
   end
 end

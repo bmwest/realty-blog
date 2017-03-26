@@ -63,3 +63,8 @@ def sign_in(user)
   fill_in "Password", with: user.password
   click_button "Sign In"
 end
+
+def add_comment
+  fill_in "Your Name:", with: "Guest"
+  fill_in "Comment:", with: "I found this so helpful"
+end

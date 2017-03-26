@@ -10,10 +10,10 @@
 
   <body>
     <nav>
+      <%= link_to "Home", root_path %> |
       <%= link_to 'View All Articles', articles_path %> |
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          <%= link_to 'View Your Articles', user_articles_path(current_user) %> |
           <%= link_to 'Post New Article', new_user_article_path(current_user) %> |
         <% end %>
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
@@ -29,7 +29,7 @@
     <%= yield %>
 
     <div class="footer-social-icons">
-      <h4 class="_14">Connect</h4>
+      <h4 class="_14">Contact</h4>
       <ul class="social-icons">
         <li><a href="" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
         <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>

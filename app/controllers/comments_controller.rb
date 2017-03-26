@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :authorize_user
 
   def new
     @article = Article.find(params[:article_id])
@@ -8,16 +7,23 @@ class CommentsController < ApplicationController
 
   def create
     @article = Article.find(params[:article_id])
-    @user = current_user
-    @comment = Comment.new(comment_params)
-    @comment.article = @article
-    @comment.user = @user
+    if current_user
+      @user = current_user
+      @comment = Comment.new(comment_params)
+      @comment.article = @article
+      @comment.user = @user
+    else
+      @comment = Comment.new(comment_params)
+      @comment.article = @article
+    end
 
     if @comment.save
       flash[:notice] = 'Comment posted successfully!'
       redirect_to article_path(@article)
     else
-      flash[:notice] = @comment.errors.full_messages
+      @comment.errors.full_messages.each do |er|
+        flash[:notice] = er
+      end
       redirect_to @comment.article
     end
   end
@@ -48,7 +54,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :user)
+    params.require(:comment).permit(:body, :user, :commenter)
   end
 
   def authorize_user
