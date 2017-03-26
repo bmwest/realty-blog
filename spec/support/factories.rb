@@ -12,4 +12,8 @@ FactoryGirl.define do
     body "Schedule a visit today to see if one of these beautiful new homes is
           right for you."
   end
+
+  factory :comment do
+    sequence(:body) { |n| "I read this article #{n} times!"}
+  end
 end

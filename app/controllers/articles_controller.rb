@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
   def index
-    @articles = Article.all.order(created_at: :desc)
+    @articles = Article.all.order(updated_at: :desc)
   end
 
   def new
@@ -41,6 +41,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments.order(updated_at: :desc)
+    @comment = Comment.new
+
+    if @comment.blank?
+      render :show
+    end
   end
 
   def destroy
@@ -56,5 +62,8 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :body)
+  end
+  def comment_params
+    params.require(:comment).permit(:body)
   end
 end
