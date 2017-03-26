@@ -18,6 +18,12 @@
 
 <br>
 
+<% if !@comments.any? %>
+  <p>Be the first to comment on this article</p>
+<% end %>
+
+<br>
+
 <div class="comment-form">
   <%= render 'comments/form_comments', article: @article, comment: @comment %>
 </div>
@@ -42,8 +48,6 @@
       <% end %>
     </ul>
   </div>
-<% else %>
-  <p>Be the first to comment on this article</p>
 <% end %>
 <br>
 
