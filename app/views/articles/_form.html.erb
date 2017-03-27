@@ -1,12 +1,14 @@
 <%= form_for @article do |f| %>
   <div class="article-form">
-    <p>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </p>
+    <div class="article-title">
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %><br><br>
+      </p>
+    </div>
 
     <p>
-      <%= f.label :body %>
+      <%= f.label :body %><br>
       <%= f.text_area :body %>
     </p>
 

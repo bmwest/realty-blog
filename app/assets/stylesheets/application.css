@@ -19,17 +19,14 @@
  body {
      font-family: 'Lato', sans-serif;
      color: black;
-     background: #EAF3F3;
-     -webkit-font-smoothing: antialiased;
+     background: #EFEFEF;
+     margin: 70px 0px 150px 10px;
+     /*-webkit-font-smoothing: antialiased;*/
  }
- a {
-     text-decoration: none;
-     color: black;
- }
- p > a:hover{
+ /*p > a:hover{
      color: #d9d9d9;
-     text-decoration:  underline;
- }
+     text-decoration:  none;
+ }*/
  h1,
  h2,
  h3,
@@ -43,33 +40,62 @@
  }
  ._14 {
      font-size: 1.4em;
+     text-align: right;
+     padding-right: 20%;
+     font-style: normal;
  }
- ul {
-     padding:0;
-     list-style: none;
+ a {
+   text-decoration: none;
+   color: black;
+ }
+
+ .navigation {
+  margin: 0;
+  padding: 10px;
+  background-color: black;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  align-items: flex-end;
+ }
+ .navigation a {
+  color: #EFEFEF;
+  text-decoration: none;
+  float: right;
+  margin-left: 5px;
+  margin-right: 20px;
  }
  .footer-social-icons {
-     width: 350px;
+     width: 150px;
+     height: 350px;
      display:block;
      margin: 0 auto;
+     align-self: center;
+     position: fixed;
+     right: 0;
+     bottom: 0;
  }
  .social-icon {
      color: #fff;
  }
  ul.social-icons {
      margin-top: 10px;
+     padding-left: 60px;
  }
  .social-icons li {
-     vertical-align: top;
+     vertical-align: bottom;
      display: inline;
      height: 100px;
+     margin-bottom: 10px
  }
  .social-icons a {
      color: #fff;
      text-decoration: none;
  }
  .fa-facebook {
-     padding:10px 14px;
+     padding:10px 16px;
+     margin-bottom: 10px;
      -o-transition:.5s;
      -ms-transition:.5s;
      -moz-transition:.5s;
@@ -81,7 +107,8 @@
      background-color: #3d5b99;
  }
  .fa-twitter {
-     padding:10px 12px;
+     padding:10px 13px;
+     margin-bottom: 10px;
      -o-transition:.5s;
      -ms-transition:.5s;
      -moz-transition:.5s;
@@ -92,8 +119,9 @@
  .fa-twitter:hover {
      background-color: #00aced;
  }
- .fa-rss {
+ .fa-google {
      padding:10px 14px;
+     margin-bottom: 10px;
      -o-transition:.5s;
      -ms-transition:.5s;
      -moz-transition:.5s;
@@ -101,11 +129,12 @@
      transition: .5s;
      background-color: #322f30;
  }
- .fa-rss:hover {
-     background-color: #eb8231;
+ .fa-google:hover {
+     background-color: #34A853;
  }
  .fa-youtube {
      padding:10px 14px;
+     margin-bottom: 10px;
      -o-transition:.5s;
      -ms-transition:.5s;
      -moz-transition:.5s;
@@ -118,6 +147,7 @@
  }
  .fa-linkedin {
      padding:10px 14px;
+     margin-bottom: 10px;
      -o-transition:.5s;
      -ms-transition:.5s;
      -moz-transition:.5s;
@@ -130,6 +160,7 @@
  }
  .fa-google-plus {
      padding:10px 9px;
+     margin-bottom: 10px;
      -o-transition:.5s;
      -ms-transition:.5s;
      -moz-transition:.5s;

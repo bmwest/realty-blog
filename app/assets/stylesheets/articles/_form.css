@@ -1,0 +1,23 @@
+form {
+  width: 500px;
+  min-height: 50px;
+  /*font-family: Arial, sans-serif;*/
+  font-size: 13px;
+  color: #444;
+  padding: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.article-form textarea {
+  height: 40em;
+  width: 50em;
+  background-color:  #EFEFEF;
+}
+
+.article-title input  {
+  background-color: #EFEFEF;
+  border: none;
+  border-bottom: solid 1px #444;
+  width: 50em;
+}

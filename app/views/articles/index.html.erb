@@ -1,12 +1,14 @@
 <div class="article-index-header">
   <h1>Article Feed</h1>
+  <p><em>scroll for more conent<em></p>
 </div>
 
 <div id="main">
   <ul>
     <% @articles.each do |a| %>
       <div class="article-item">
-        <li><%= link_to a.title, article_path(a) %></li><br>
+        <h4><%= link_to a.title, article_path(a) %></h4><br>
+        <p><%= link_to a.preview(20).to_s, article_path(a) %></p>
       </div>
     <% end %>
   </ul>
