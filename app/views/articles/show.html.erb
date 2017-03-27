@@ -3,60 +3,66 @@
   <p>by | <em><%= @article.user.first_name %></em>
 </div>
 
-<div class="article-body">
-  <%= @article.body %>
-</div>
 
 <br>
-
-<div class="article-permissions">
-  <% if current_user && current_user.admin? %>
-    <%= link_to "Edit #{@article.title}", edit_user_article_path(@article) %>
-    <%= link_to "Delete #{@article.title}", user_article_path(@article), method: :delete %>
-  <% end %>
-</div>
-
-<br>
-
-<% if !@comments.any? %>
-  <p>Be the first to comment on this article</p>
-<% end %>
-
-<br>
-
-<div class="comment-form">
-  <%= render 'comments/form_comments', article: @article, comment: @comment %>
-</div>
-
-<br>
-
-<% if @comments.any? %>
-  <div class="article-comments">
-    <p>Comments:</p>
-    <ul>
-      <% @comments.each do |c| %>
-        <% if !c.user %>
-          <p><%= c.commenter %> says: </p>
-        <% else %>
-          <p><%= c.user.first_name %> <%= c.user.last_name %> says: </p>
-        <% end %>
-        <li> <%= c.body %> </li><br>
-        <div class="manage-comments" %>
-          <% if current_user && c.user == current_user %>
-            <%= link_to "Edit Comment", edit_article_comment_path(@article, c) %> |
-            <%= link_to "Delete Comment", article_comment_path(@article, c), method: :delete %>
-          <% elsif current_user && c.user == current_user || current_user && current_user.admin? %>
-            <% if c.user %>
-              <%= link_to "Delete #{c.user.first_name}'s Comment", article_comment_path(@article, c), method: :delete %>
-            <% elsif c.commenter %>
-            <%= link_to "Delete #{c.commenter}'s Comment", article_comment_path(@article, c), method: :delete %>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
-    </ul>
+<div class="containter">
+  <div class="article-permissions">
+    <% if current_user && current_user.admin? %>
+      <%= link_to "Edit #{@article.title}", edit_user_article_path(@article) %>
+      <%= link_to "Delete #{@article.title}", user_article_path(@article), method: :delete %>
+    <% end %>
   </div>
-<% end %>
-<br>
 
-<%= link_to "< back", articles_path %>
+  <br><br><br>
+
+  <div class="article-body">
+    <%= @article.body %>
+  </div>
+
+  <br>
+
+  <% if !@comments.any? %>
+    <b><p>Be the first to comment on this article</p></b>
+  <% end %>
+
+  <br>
+
+  <div class="comment-form">
+    <%= render 'comments/form_comments', article: @article, comment: @comment %>
+  </div>
+
+  <br>
+
+  <% if @comments.any? %>
+    <div class="article-comments">
+      <p>Comments:</p>
+      <ul>
+        <% @comments.each do |c| %>
+        <div class="comment">
+          <% if !c.user %>
+            <em><p><%= c.commenter %> says: </p></em>
+          <% else %>
+            <em><p><%= c.user.first_name %> <%= c.user.last_name %> says: </p></em>
+          <% end %>
+          <p> >   <%= c.body %> </p><br>
+          <div class="manage-comments" %>
+            <% if current_user && c.user == current_user %>
+              <%= link_to "Edit Comment", edit_article_comment_path(@article, c) %> |
+              <%= link_to "Delete Comment", article_comment_path(@article, c), method: :delete %>
+            <% elsif current_user && c.user == current_user || current_user && current_user.admin? %>
+              <% if c.user %>
+                <%= link_to "Delete #{c.user.first_name}'s Comment", article_comment_path(@article, c), method: :delete %>
+              <% elsif c.commenter %>
+              <%= link_to "Delete #{c.commenter}'s Comment", article_comment_path(@article, c), method: :delete %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+
+  <%= link_to "< back", articles_path %>
+</div>

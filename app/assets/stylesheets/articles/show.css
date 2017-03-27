@@ -1,0 +1,41 @@
+.article-body {
+  text-align: justify;
+  padding: 0px 15% 0px 15%;
+  text-indent: 50px;
+  white-space: pre-wrap;
+}
+
+.comment-form {
+  margin-left: 5%;
+  margin-right: 10%;
+  padding: 15px;
+}
+
+textarea {
+  height: 4em;
+  width: 50em;
+}
+
+.article-comments {
+  margin-left: 5%;
+  margin-right: 10%;
+  border-top: solid black 1px;
+}
+
+.container {
+  margin-bottom: 100px;
+}
+
+.article-comments p {
+  width: 60%;
+  padding: 5px;
+}
+
+.manage-comments {
+  text-decoration: underline;
+}
+
+.comment {
+  border-bottom: dotted black 0.5px;
+  padding: 10px;
+}

@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$('a.article-item').hover ->
+  $('.article-content').toggle()

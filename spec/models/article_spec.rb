@@ -10,4 +10,13 @@ RSpec.describe Article, type: :model do
                                       267-555-5555 by no later than Wednesday,
                                       April 3, 2017. Hope to see you there!") }
   it { should_not have_valid(:body).when(nil, "") }
+
+  describe "#preview(n)" do
+    it "returns specified number of words from article body" do
+      user = FactoryGirl.create(:user, role: "admin")
+      article = FactoryGirl.create(:article, user: user)
+
+      expect(article.preview(5)).to eq("Schedule a visit today to")
+    end
+  end
 end
