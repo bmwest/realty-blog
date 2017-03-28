@@ -17,17 +17,17 @@
  @import url(http://fonts.googleapis.com/css?family=Lato);
  @import url(https://cloud.webtype.com/css/cbb84fd3-f1c5-4841-a232-62e42040143e.css);
  @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
  body {
      font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", sans-serif;
      color: black;
      background: #EFEFEF;
-     margin: 5% 5% 150px 5%;
+     margin: 5% 5% 0% 5%;
      /*-webkit-font-smoothing: antialiased;*/
  }
- /*p > a:hover{
-     color: #d9d9d9;
-     text-decoration:  none;
- }*/
+ 
+textarea, input, button { outline: none; }
+
  h1,
  h2,
  h3,
@@ -84,6 +84,7 @@
  ul.social-icons {
      margin-top: 10px;
      padding-left: 60px;
+     bottom: 0px;
  }
  .social-icons li {
      vertical-align: bottom;
