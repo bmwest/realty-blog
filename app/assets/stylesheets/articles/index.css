@@ -49,9 +49,9 @@
     transition: top 0.2s h3near;
 }
 
-/*#main ul {
-  margin-top: 130%;
-}*/
+#main ul {
+  margin-top: 120%;
+}
 
 /*h5 {
   margin: 0 auto;
