@@ -5,6 +5,10 @@
   white-space: pre-wrap;
 }
 
+.article-show-header {
+  margin-left: 5%;
+}
+
 .comment-form {
   margin-left: 5%;
   margin-right: 10%;
