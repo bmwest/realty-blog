@@ -27,6 +27,12 @@
 
   <br>
 
+  <div class="back-to-index">
+    <%= link_to " < back ", articles_path %>
+  </div>
+
+  <br>
+
   <div class="comment-form">
     <%= render 'comments/form_comments', article: @article, comment: @comment %>
   </div>
@@ -64,5 +70,4 @@
   <% end %>
   <br>
 
-  <%= link_to "< back", articles_path %>
 </div>

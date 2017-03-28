@@ -47,3 +47,31 @@ textarea {
   border-bottom: dotted black 0.5px;
   padding: 10px;
 }
+
+.back-to-index {
+  border: 1px solid #322f30;
+  background-color: #322f30;
+  font-size: 18px;
+  line-height: 30px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  position: fixed;
+  left: 40px;
+  bottom: 120px;
+}
+.back-to-index a { color: #EFEFEF; }
+.back-to-index a:hover { color: black; }
+
+.back-to-index:hover {
+  border: 1px solid #EFEFEF;
+  background-color: #EFEFEF;
+  font-size: 18px;
+  line-height: 30px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  position: fixed;
+  left: 40px;
+  bottom: 120px;
+}
