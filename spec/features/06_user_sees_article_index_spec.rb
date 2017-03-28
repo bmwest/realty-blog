@@ -8,7 +8,7 @@ feature "user sees articles" do
     visit root_path
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
@@ -21,7 +21,7 @@ feature "user sees articles" do
     visit root_path
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("View All Articles")
     expect(page).to have_content("Sign Out")
 
@@ -37,7 +37,7 @@ feature "user sees articles" do
 
     expect(page).to have_content("View All Articles")
     expect(page).to_not have_content("Sign Out")
-    expect(page).to_not have_content("Hey, nice to see you again.")
+    expect(page).to_not have_content("Nice to see you again.")
 
     click_link "View All Articles"
 
@@ -49,7 +49,7 @@ feature "user sees articles" do
 
     expect(page).to have_content("View All Articles")
     expect(page).to_not have_content("Sign Out")
-    expect(page).to_not have_content("Hey, nice to see you again.")
+    expect(page).to_not have_content("Nice to see you again.")
 
     click_link "View All Articles"
     expect(page).to have_content(article.title)
@@ -64,7 +64,7 @@ feature "user sees articles" do
 
     expect(page).to have_content("View All Articles")
     expect(page).to have_content("Sign Out")
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to_not have_content("Post New Article")
   end
 
@@ -74,7 +74,7 @@ feature "user sees articles" do
 
     expect(page).to have_content("View All Articles")
     expect(page).to have_content("Sign Out")
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
 
     click_link "View All Articles"
 
@@ -88,7 +88,7 @@ feature "user sees articles" do
 
     expect(page).to have_content("View All Articles")
     expect(page).to have_content("Sign Out")
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
 
     click_link "View All Articles"
 

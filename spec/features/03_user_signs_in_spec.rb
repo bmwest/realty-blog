@@ -6,7 +6,7 @@ feature "user signs in" do
   scenario "an existing user specifies a valid email and password" do
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("Sign Out")
   end
 
@@ -18,7 +18,7 @@ feature "user signs in" do
     click_button "Sign In"
 
     expect(page).to have_content("Invalid Email or password.")
-    expect(page).to_not have_content("Hey, nice to see you again.")
+    expect(page).to_not have_content("Nice to see you again.")
     expect(page).to_not have_content("Sign Out")
   end
 
@@ -30,7 +30,7 @@ feature "user signs in" do
     click_button "Sign In"
 
     expect(page).to have_content("Invalid Email or password.")
-    expect(page).to_not have_content("Hey, nice to see you again.")
+    expect(page).to_not have_content("Nice to see you again.")
   end
 
   scenario "an already authenticated user cannot re-sign in" do

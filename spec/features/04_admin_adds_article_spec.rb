@@ -7,7 +7,7 @@ feature "admin adds an article" do
   scenario "admin posts an article" do
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("Post New Article")
 
     click_link "Post New Article"
@@ -22,7 +22,7 @@ feature "admin adds an article" do
   scenario "admin posts an article unsuccessfully" do
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("Post New Article")
 
     click_link "Post New Article"
@@ -34,7 +34,7 @@ feature "admin adds an article" do
   scenario "admin edits an article" do
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
 
     visit articles_path
 

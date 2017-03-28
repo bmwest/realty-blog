@@ -10,7 +10,7 @@ feature "admin removes a comment" do
   scenario "admin removes a comment" do
     sign_in(user_A)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"

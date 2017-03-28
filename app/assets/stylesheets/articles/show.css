@@ -19,7 +19,7 @@
   padding: 15px;
 }
 
-textarea {
+.comment-form textarea {
   height: 4em;
   width: 50em;
 }

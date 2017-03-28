@@ -7,7 +7,7 @@ feature "admin deletes an article" do
   scenario "admin deletes an article" do
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("View All Articles")
 
     click_link "View All Articles"
